@@ -11,8 +11,8 @@
       </button>
     </div>
     <div class="container d-flex justify-content-center align-items-center">
-      <div v-if="this.query == ''" class="loader my-5">
-        <div>Inserisci un film <i class="fa-solid fa-film fa-2x"></i></div>
+      <div v-if="this.query == ''" class="loader my-5 fw-bold fs-1">
+        <div>Aggiungi un film <i class="fa-solid fa-film fa-2x"></i></div>
       </div>
       <div v-else class="row">
         <div v-for="movie in movies" :key="movie.id" class="col-3 text-center">
