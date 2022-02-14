@@ -38,13 +38,12 @@ export default {
     },
     setQuery(val) {
       this.query = val;
+      this.getData();
     },
   },
-  // computed: {
-  //   updateQuery() {
-  //     return this.query = this.userQuery;
-  //   },
-  // },
+  computed: {
+    
+  },
   created() {
     this.getData();
   },
