@@ -13,7 +13,7 @@ export default {
     return {
       movies: [],
       user_key: "1ed3a172e57823689018496d86094f75",
-      query: "lord of the ring",
+      query: "",
       // userQuery: "",
     };
   },
