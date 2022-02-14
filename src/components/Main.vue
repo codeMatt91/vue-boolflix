@@ -11,8 +11,11 @@
       </button>
     </div>
     <div class="container">
-      <div v-if="this.query == ''" class="loader my-5 fw-bold fs-1 text-center">
-        <div>Aggiungi un film <i class="fa-solid fa-film fa-2x"></i></div>
+      <div
+        v-if="!this.movies.length && !this.series.length"
+        class="loader my-5 fw-bold fs-1 text-center"
+      >
+        <div>Aggiungi un film <i class="fa-solid fa-star"></i></div>
       </div>
       <div v-else>
         <h1 v-if="this.query !== ''" class="my-4 fw-bold">FILM</h1>
