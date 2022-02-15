@@ -31,7 +31,8 @@
       </div>
       <div class="plot text-white">
         <h3>Plot:</h3>
-        {{ item.overview }}
+        <div v-if="item.overview">{{ item.overview }}</div>
+        <div v-else>Siamo Spiacenti al momento non è disponibile la trama</div>
       </div>
     </div>
   </div>
