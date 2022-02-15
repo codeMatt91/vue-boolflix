@@ -6,7 +6,7 @@
         v-if="!this.movies.length && !this.series.length"
         class="loader my-5 fw-bold fs-1 text-center"
       >
-        <div>Aggiungi un film <i class="fa-solid fa-star"></i></div>
+        <div>Aggiungi un film <i class="fa-solid fa-star w342"></i></div>
       </div>
 
       <!-- SECTION FILMS & SERIES TV  -->

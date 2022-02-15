@@ -1,5 +1,8 @@
 <template>
   <ul class="list-unstyled">
+    <li>
+      <img :src="getPoster" alt="" />
+    </li>
     <li>{{ item.original_title || item.original_name }}</li>
     <li>{{ item.title || item.name }}</li>
     <li>
@@ -25,6 +28,18 @@
 export default {
   name: "Card",
   props: ["item"],
+  data() {
+    return {};
+  },
+  computed: {
+    getPoster() {
+      if (this.item.poster_path) {
+        return `https://image.tmndb.org/t/p/w342/${this.item.poster_path}`;
+      } else {
+        return "https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-6.png";
+      }
+    },
+  },
 };
 </script>
 
