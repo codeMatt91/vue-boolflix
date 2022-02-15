@@ -30,13 +30,13 @@
               :key="movie.id"
               class="col-3 text-center"
             >
-              <Card :item="movies" />
+              <Card :item="movie" />
             </div>
           </div>
         </div>
 
         <!-- SERIES TV  -->
-        <div  id="series">
+        <div id="series">
           <h1 class="my-4 fw-bold">SERIE TV</h1>
           <div class="row">
             <div
@@ -44,7 +44,7 @@
               :key="serie.id"
               class="col-3 text-center"
             >
-              <Card :item="series" />
+              <Card :item="serie" />
             </div>
           </div>
         </div>
