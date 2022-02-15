@@ -56,7 +56,6 @@ export default {
       this.setDataSeries();
     },
   },
-  computed: {},
 };
 </script>
 

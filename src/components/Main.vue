@@ -11,69 +11,41 @@
       </button>
     </div>
     <div class="container">
+      <!-- SECTION LOADER  -->
       <div
         v-if="!this.movies.length && !this.series.length"
         class="loader my-5 fw-bold fs-1 text-center"
       >
         <div>Aggiungi un film <i class="fa-solid fa-star"></i></div>
       </div>
+
+      <!-- SECTION FILMS & SERIES TV  -->
       <div v-else>
-        <h1 v-if="this.query !== ''" class="my-4 fw-bold">FILM</h1>
-        <div class="row">
-          <div
-            v-for="movie in movies"
-            :key="movie.id"
-            class="col-3 text-center"
-          >
-            <ul class="list-unstyled">
-              <li>{{ movie.original_title }}</li>
-              <li>{{ movie.title }}</li>
-              <li>
-                <img
-                  class="w-25"
-                  v-if="movie.original_language === 'it'"
-                  src="../assets/img/it.png"
-                  alt="flag Italy"
-                />
-                <img
-                  class="w-25"
-                  v-else-if="movie.original_language === 'en'"
-                  src="../assets/img/en.png"
-                  alt="flag England"
-                />
-                <div v-else>{{ movie.original_language }}</div>
-              </li>
-              <li>{{ movie.vote_average }}</li>
-            </ul>
+        <!-- FILMS  -->
+        <div id="films">
+          <h1 class="my-4 fw-bold">FILM</h1>
+          <div class="row">
+            <div
+              v-for="movie in movies"
+              :key="movie.id"
+              class="col-3 text-center"
+            >
+              <Card :item="movies" />
+            </div>
           </div>
         </div>
-        <h1 v-if="this.query !== ''" class="my-4 fw-bold">SERIE TV</h1>
-        <div class="row">
-          <div
-            v-for="serie in series"
-            :key="serie.id"
-            class="col-3 text-center"
-          >
-            <ul class="list-unstyled">
-              <li>{{ serie.original_name }}</li>
-              <li>{{ serie.name }}</li>
-              <li>
-                <img
-                  class="w-25"
-                  v-if="serie.original_language === 'it'"
-                  src="../assets/img/it.png"
-                  alt="flag Italy"
-                />
-                <img
-                  class="w-25"
-                  v-else-if="serie.original_language === 'en'"
-                  src="../assets/img/en.png"
-                  alt="flag England"
-                />
-                <div v-else>{{ serie.original_language }}</div>
-              </li>
-              <li>{{ serie.vote_average }}</li>
-            </ul>
+
+        <!-- SERIES TV  -->
+        <div  id="series">
+          <h1 class="my-4 fw-bold">SERIE TV</h1>
+          <div class="row">
+            <div
+              v-for="serie in series"
+              :key="serie.id"
+              class="col-3 text-center"
+            >
+              <Card :item="series" />
+            </div>
           </div>
         </div>
       </div>
@@ -82,8 +54,13 @@
 </template>
 
 <script>
+import Card from "./Card.vue";
+
 export default {
   name: "Main",
+  components: {
+    Card,
+  },
   props: ["movies", "series"],
   data() {
     return {
