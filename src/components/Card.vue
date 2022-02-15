@@ -1,7 +1,7 @@
 <template>
   <ul class="list-unstyled">
     <li>
-      <img :src="getPoster" alt="" />
+      <img class="poster-img" :src="getPoster" alt="" />
     </li>
     <li>{{ item.original_title || item.original_name }}</li>
     <li>{{ item.title || item.name }}</li>
@@ -20,7 +20,7 @@
       />
       <div v-else>{{ item.original_language }}</div>
     </li>
-    <li class="d-flex justify-content-center">
+    <li class="d-flex my-2 justify-content-center">
       <i v-for="item in getStar" :key="item" class="fa-solid fa-star"></i>
       <i v-for="star in 5 - getStar" :key="star" class="fa-regular fa-star"></i>
     </li>
@@ -52,4 +52,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped lang="scss">
+.poster-img {
+  width: 342px;
+  height: 513px;
+}
+</style>

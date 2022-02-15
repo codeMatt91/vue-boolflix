@@ -13,12 +13,12 @@
       <div v-else>
         <!-- FILMS  -->
         <div id="films">
-          <h1 class="my-4 fw-bold">FILM</h1>
-          <div class="row">
+          <h1 class="my-5 fw-bold text-center">FILM</h1>
+          <div class="row g-3">
             <div
               v-for="movie in movies"
               :key="movie.id"
-              class="col-3 text-center"
+              class="col-4 text-center border border-2 rounded"
             >
               <Card :item="movie" />
             </div>
@@ -27,12 +27,12 @@
 
         <!-- SERIES TV  -->
         <div id="series">
-          <h1 class="my-4 fw-bold">SERIE TV</h1>
-          <div class="row">
+          <h1 class="my-5 fw-bold text-center">SERIE TV</h1>
+          <div class="row g-3">
             <div
               v-for="serie in series"
               :key="serie.id"
-              class="col-3 text-center"
+              class="col-4 text-center border border-2 rounded"
             >
               <Card :item="serie" />
             </div>
