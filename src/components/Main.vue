@@ -4,9 +4,9 @@
       <!-- SECTION LOADER  -->
       <div
         v-if="!this.movies.length && !this.series.length"
-        class="loader my-5 fw-bold fs-1 text-center"
+        class="loader my-5 fw-bold fs-1 text-center position-fixed top-50 start-50 translate-middle"
       >
-        <div>Aggiungi un film <i class="fa-solid fa-star w342"></i></div>
+        <div>SEARCH FILMS OR TV SERIES <i class="fa-solid fa-film"></i></div>
       </div>
 
       <!-- SECTION FILMS & SERIES TV  -->

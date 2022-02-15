@@ -20,7 +20,10 @@
       />
       <div v-else>{{ item.original_language }}</div>
     </li>
-    <li>{{ item.vote_average }}</li>
+    <li class="d-flex justify-content-center">
+      <i v-for="item in getStar" :key="item" class="fa-solid fa-star"></i>
+      <i v-for="star in 5 - getStar" :key="star" class="fa-regular fa-star"></i>
+    </li>
   </ul>
 </template>
 
@@ -29,14 +32,20 @@ export default {
   name: "Card",
   props: ["item"],
   data() {
-    return {};
+    return {
+      rest: "",
+    };
   },
   computed: {
+    getStar() {
+      return Math.floor(this.item.vote_average / 2);
+    },
+
     getPoster() {
-      if (this.item.poster_path) {
-        return `https://image.tmndb.org/t/p/w342/${this.item.poster_path}`;
-      } else {
+      if (!this.item.poster_path) {
         return "https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-6.png";
+      } else {
+        return `https://image.tmdb.org/t/p/w342${this.item.poster_path}`;
       }
     },
   },
