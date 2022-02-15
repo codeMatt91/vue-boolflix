@@ -1,11 +1,15 @@
 <template>
-  <Main :series="series" :movies="movies" @click="setQuery" />
+  <div>
+    <Header @click="setQuery" />
+    <Main :series="series" :movies="movies" />
+  </div>
 </template>
 
 <script>
 import axios from "axios";
 
 import Main from "./components/Main.vue";
+import Header from "./components/Header.vue";
 
 export default {
   name: "App",
@@ -19,9 +23,16 @@ export default {
   },
   components: {
     Main,
+    Header,
   },
   methods: {
     getDataMovies() {
+      if (!this.query) {
+        this.movies = [];
+        this.series = [];
+        return;
+      }
+
       const config = {
         params: {
           api_key: this.user_key,

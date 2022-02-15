@@ -1,15 +1,5 @@
 <template>
   <main>
-    <div
-      id="search"
-      class="d-flex justify-content-center align-items-center my-5"
-    >
-      <label for="search" class="me-2">Inserisci un film</label>
-      <input v-model="query" id="search" type="text" />
-      <button class="btn btn-danger ms-2" @click="$emit('click', query)">
-        CERCA
-      </button>
-    </div>
     <div class="container">
       <!-- SECTION LOADER  -->
       <div
@@ -63,9 +53,7 @@ export default {
   },
   props: ["movies", "series"],
   data() {
-    return {
-      query: "",
-    };
+    return {};
   },
 };
 </script>
