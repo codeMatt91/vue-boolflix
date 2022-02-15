@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <Header @click="setQuery" />
     <Main :series="series" :movies="movies" />
   </div>

@@ -1,10 +1,13 @@
 <template>
-  <header>
+  <header class="d-flex justify-content-between align-items-center">
+    <div class="ms-4">
+      <h1>BOOLFLIX</h1>
+    </div>
     <div
       id="search"
-      class="d-flex justify-content-center align-items-center my-5"
+      class="d-flex justify-content-center align-items-center me-4"
     >
-      <label for="search" class="me-2">Inserisci un film</label>
+      <label for="search" class="me-2"></label>
       <input
         v-model="query"
         id="search"
@@ -29,4 +32,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped lang="scss">
+header {
+  height: 200px;
+  background-color: black;
+}
+h1 {
+  color: red;
+}
+</style>
