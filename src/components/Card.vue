@@ -1,7 +1,7 @@
 <template>
   <div class="card-poster list-unstyled d-flex flex-column align-items-center">
     <div class="poster">
-      <img class="poster-img" :src="getPoster" alt="" />
+      <img class="poster-img img-fluid h-100" :src="getPoster" alt="" />
     </div>
     <div class="info">
       <div>{{ item.original_title || item.original_name }}</div>
