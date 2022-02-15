@@ -75,6 +75,7 @@ export default {
   width: 10%;
 }
 .card-poster {
+  margin: 0;
   width: 342px;
   height: 513px;
   position: relative;
@@ -88,11 +89,26 @@ export default {
   height: 513px;
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  bottom: 0;
   color: white;
   background-color: rgba(#2b2a2a, 0.7);
   overflow: auto;
+  animation: slide-in-bck-left 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes slide-in-bck-left {
+  0% {
+    transform: translateZ(700px) translateX(-400px);
+    transform: translateZ(700px) translateX(-400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(0) translateX(0);
+    transform: translateZ(0) translateX(0);
+    opacity: 1;
+  }
 }
 
 .card-poster:hover .info {
