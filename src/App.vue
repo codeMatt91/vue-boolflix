@@ -17,7 +17,10 @@ export default {
     return {
       series: [],
       movies: [],
+      castMovie: [],
+      castTv: [],
       user_key: "1ed3a172e57823689018496d86094f75",
+      base_uri: "https://api.themoviedb.org/3/",
       query: "",
     };
   },

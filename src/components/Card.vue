@@ -45,13 +45,31 @@ export default {
   data() {
     return {
       rest: "",
+      castTv: [],
+      user_key: "1ed3a172e57823689018496d86094f75",
+      base_uri: "https://api.themoviedb.org/3/",
     };
   },
+  methods: {},
   computed: {
     getStar() {
-      return Math.floor(this.item.vote_average / 2);
+      return Math.ceil(this.item.vote_average / 2);
     },
+    // getCast() {
+    //   if (!this.item) return;
 
+    //   return axios
+    //     .get(
+    //       `${this.base_uri}tv/${this.item.id}/credits?api_key=${this.user_key}&language=en-US`
+    //     )
+    //     .then((res3) => {
+    //       const castSeries = res3.data.cast;
+
+    //       castSeries.forEach((element) => {
+    //         this.castTv.push(element.name);
+    //       });
+    //     });
+    // },
     getPoster() {
       if (!this.item.poster_path) {
         return "https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-6.png";
@@ -95,7 +113,7 @@ export default {
   color: white;
   background-color: rgba(#2b2a2a, 0.7);
   overflow: auto;
-  animation: slide-in-bck-left 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: slide-in-bck-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 @keyframes slide-in-bck-left {

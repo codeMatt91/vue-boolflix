@@ -18,7 +18,7 @@
             <div
               v-for="movie in movies"
               :key="movie.id"
-              class="col-4 text-center"
+              class="col-4 d-flex justify-content-center"
             >
               <Card :item="movie" />
             </div>
@@ -32,7 +32,7 @@
             <div
               v-for="serie in series"
               :key="serie.id"
-              class="col-4 text-center"
+              class="col-4 d-flex justify-content-center"
             >
               <Card :item="serie" />
             </div>
@@ -59,6 +59,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+[class^="col-"] {
+  cursor: pointer;
+}
 main {
   height: calc(100% - 200px);
   background-color: #676767;
