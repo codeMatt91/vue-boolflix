@@ -34,7 +34,7 @@
               :key="serie.id"
               class="col-4 d-flex justify-content-center"
             >
-              <Card :item="serie" />
+              <Card :item="serie" @name="setName" />
             </div>
           </div>
         </div>
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+// import axios from "axios";
 import Card from "./Card.vue";
 
 export default {
@@ -52,9 +53,6 @@ export default {
     Card,
   },
   props: ["movies", "series"],
-  data() {
-    return {};
-  },
 };
 </script>
 

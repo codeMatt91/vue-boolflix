@@ -34,6 +34,7 @@
         <div v-if="item.overview">{{ item.overview }}</div>
         <div v-else>Siamo Spiacenti al momento non è disponibile la trama</div>
       </div>
+      <div>{{ item.id }}</div>
     </div>
   </div>
 </template>
@@ -44,40 +45,29 @@ export default {
   props: ["item"],
   data() {
     return {
-      rest: "",
-      castTv: [],
-      user_key: "1ed3a172e57823689018496d86094f75",
-      base_uri: "https://api.themoviedb.org/3/",
+      
     };
   },
-  methods: {},
   computed: {
     getStar() {
       return Math.ceil(this.item.vote_average / 2);
     },
-    // getCast() {
-    //   if (!this.item) return;
-
-    //   return axios
-    //     .get(
-    //       `${this.base_uri}tv/${this.item.id}/credits?api_key=${this.user_key}&language=en-US`
-    //     )
-    //     .then((res3) => {
-    //       const castSeries = res3.data.cast;
-
-    //       castSeries.forEach((element) => {
-    //         this.castTv.push(element.name);
-    //       });
-    //     });
-    // },
     getPoster() {
       if (!this.item.poster_path) {
-        return "https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-6.png";
+        return "https://www.altavod.com/assets/images/poster-placeholder.png";
       } else {
         return `https://image.tmdb.org/t/p/w342${this.item.poster_path}`;
       }
     },
   },
+  // mounted: {
+  //   getIdName() {
+  //     const arrayItem = [...this.item];
+
+  //     let { id } = arrayItem;
+  //     this.$emit("name", id);
+  //   },
+  // },
 };
 </script>
 
