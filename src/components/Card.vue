@@ -4,8 +4,8 @@
       <img class="poster-img img-fluid h-100" :src="getPoster" alt="" />
     </div>
     <div class="info">
+      <div class="h3">{{ item.title || item.name }}</div>
       <div>{{ item.original_title || item.original_name }}</div>
-      <div>{{ item.title || item.name }}</div>
       <div>
         <img
           class="w-10"
@@ -30,11 +30,15 @@
         ></i>
       </div>
       <div class="plot text-white">
-        <h3>Plot:</h3>
+        <h3 class="text-warning">Plot:</h3>
         <div v-if="item.overview">{{ item.overview }}</div>
         <div v-else>Siamo Spiacenti al momento non è disponibile la trama</div>
       </div>
-      <div>{{ item.id }}</div>
+      <h4 class="my-3 text-warning">Release date:</h4>
+      <div v-if="item.release_date" class="my-2">
+        <strong> {{ item.release_date }}</strong>
+      </div>
+      <div v-else>Available soon</div>
     </div>
   </div>
 </template>
@@ -44,9 +48,7 @@ export default {
   name: "Card",
   props: ["item"],
   data() {
-    return {
-      
-    };
+    return {};
   },
   computed: {
     getStar() {
